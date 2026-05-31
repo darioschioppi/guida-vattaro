@@ -1,0 +1,2288 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guida Vacanza – Vattaro, Giugno 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Playfair+Display:wght@700&display=swap');
+
+    :root {
+      --verde: #2D6A4F;
+      --verde-medio: #40916C;
+      --verde-chiaro: #74C69D;
+      --verde-pallido: #D8F3DC;
+      --verde-sfondo: #F0FBF4;
+      --caldo: #F4A261;
+      --caldo-chiaro: #FFDDD2;
+      --blu: #2166AC;
+      --blu-chiaro: #E3F2FD;
+      --testo: #1a2e1a;
+      --testo-medio: #4a6741;
+      --bianco: #ffffff;
+      --grigio: #f5f5f5;
+      --ombra: rgba(45,106,79,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--testo);
+      background: var(--verde-sfondo);
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 50%, #40916C 100%);
+      color: white;
+      padding: 60px 24px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 50px;
+      background: var(--verde-sfondo);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-emoji { font-size: 60px; display: block; margin-bottom: 16px; }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(28px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .hero-sub {
+      font-size: clamp(16px, 3vw, 20px);
+      opacity: 0.92;
+      margin-bottom: 20px;
+    }
+    .badge-hero {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 30px;
+      padding: 8px 22px;
+      font-size: 16px;
+      margin: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* CONTENITORE */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 16px 60px;
+    }
+
+    /* SEZIONE TITOLO */
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(22px, 4vw, 30px);
+      color: var(--verde);
+      margin: 48px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--verde-chiaro);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* CARD INFO HOTEL */
+    .hotel-card {
+      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-medio) 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 28px 32px;
+      margin: 24px 0;
+      box-shadow: 0 8px 30px var(--ombra);
+    }
+    .hotel-card h3 {
+      font-size: 22px;
+      margin-bottom: 14px;
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .hotel-row {
+      display: flex;
+      gap: 12px;
+      margin: 6px 0;
+      align-items: flex-start;
+    }
+    .hotel-row .ic { font-size: 20px; min-width: 28px; }
+    .hotel-row span { opacity: 0.95; font-size: 17px; }
+
+    /* BOX AVVISO */
+    .box {
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 16px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .box-verde { background: var(--verde-pallido); border-left: 5px solid var(--verde-medio); }
+    .box-caldo  { background: var(--caldo-chiaro); border-left: 5px solid var(--caldo); }
+    .box-blu    { background: var(--blu-chiaro);   border-left: 5px solid var(--blu); }
+    .box-ic { font-size: 26px; min-width: 36px; margin-top: 2px; }
+    .box-body { flex: 1; }
+    .box-body strong { font-size: 17px; display: block; margin-bottom: 4px; color: var(--verde); }
+    .box-body p, .box-body li { font-size: 16px; color: #333; }
+    .box-blu .box-body strong { color: var(--blu); }
+    .box-caldo .box-body strong { color: #b5541a; }
+
+    /* CARD GIORNO */
+    .day-card {
+      background: var(--bianco);
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 20px 0;
+      box-shadow: 0 4px 20px var(--ombra);
+      border: 1px solid rgba(116,198,157,0.3);
+    }
+    .day-header {
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .day-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1;
+      min-width: 60px;
+      color: white;
+      opacity: 0.9;
+    }
+    .day-info { flex: 1; }
+    .day-info .data {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.85;
+      color: white;
+    }
+    .day-info h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(20px, 3vw, 26px);
+      color: white;
+      line-height: 1.2;
+    }
+    .day-emoji { font-size: 42px; }
+    .day-body { padding: 24px 28px; }
+
+    .difficulty {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .diff-facile   { background: #d4edda; color: #155724; }
+    .diff-moderato { background: #fff3cd; color: #856404; }
+    .diff-intenso  { background: #fde8e8; color: #842029; }
+
+    .attivita {
+      background: var(--verde-sfondo);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 12px 0;
+    }
+    .attivita h4 {
+      font-size: 18px;
+      color: var(--verde);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .attivita p, .attivita li { font-size: 16px; color: #2a3a2a; margin: 4px 0; }
+    .attivita ul { padding-left: 20px; }
+
+    .parcheggio {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      font-size: 15px;
+      color: #5c4000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mappa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--verde);
+      color: white !important;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+    .mappa-link:hover { background: var(--verde-medio); }
+
+    /* COLORI CARD GIORNO */
+    .g1 .day-header { background: linear-gradient(135deg, #2D6A4F, #52B788); }
+    .g2 .day-header { background: linear-gradient(135deg, #1E6091, #2F80B5); }
+    .g3 .day-header { background: linear-gradient(135deg, #7D4F50, #B07880); }
+    .g4 .day-header { background: linear-gradient(135deg, #5B4A00, #9B7E00); }
+    .g5 .day-header { background: linear-gradient(135deg, #3A5A40, #6B9E5A); }
+    .g6 .day-header { background: linear-gradient(135deg, #4A2080, #7B52B8); }
+    .g7 .day-header { background: linear-gradient(135deg, #C45000, #E07830); }
+    .g8 .day-header { background: linear-gradient(135deg, #2D6A4F, #40916C); }
+
+    /* SEZIONE CONSIGLI */
+    .consigli-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .consiglio-card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 2px 12px var(--ombra);
+      border-top: 4px solid var(--verde-chiaro);
+    }
+    .consiglio-card .ic-big { font-size: 36px; margin-bottom: 10px; }
+    .consiglio-card h4 { font-size: 17px; color: var(--verde); margin-bottom: 8px; }
+    .consiglio-card p, .consiglio-card li { font-size: 15px; color: #444; }
+    .consiglio-card ul { padding-left: 18px; }
+
+    /* AMBITI */
+    .ambiti-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .ambito-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 3px 14px var(--ombra);
+    }
+    .ambito-header {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+    }
+    .ambito-header .a-ic { font-size: 28px; }
+    .ambito-header h3 { font-size: 17px; font-family: 'Playfair Display', Georgia, serif; }
+    .ambito-header p  { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+    .ambito-body { padding: 14px 18px; }
+    .ambito-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 15px;
+    }
+    .ambito-item:last-child { border-bottom: none; }
+    .ambito-item .a-nome { font-weight: 700; color: var(--verde); }
+    .ambito-item .a-note { font-size: 13px; color: #666; }
+    .ambito-item .a-badge {
+      margin-left: auto;
+      font-size: 12px;
+      background: var(--verde-pallido);
+      color: var(--verde);
+      border-radius: 10px;
+      padding: 2px 8px;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    .ah-laghi   { background: linear-gradient(135deg, #1E6091, #2F80B5); }
+    .ah-montagna{ background: linear-gradient(135deg, #3A5A40, #6B9E5A); }
+    .ah-arte    { background: linear-gradient(135deg, #4A2080, #7B52B8); }
+    .ah-musei   { background: linear-gradient(135deg, #5B4A00, #9B7E00); }
+    .ah-borghi  { background: linear-gradient(135deg, #7D4F50, #B07880); }
+    .ah-food    { background: linear-gradient(135deg, #C45000, #E07830); }
+    .ah-pioggia { background: linear-gradient(135deg, #1B4332, #2D6A4F); }
+    /* MARTALAR */
+    .martalar-section { max-width: 820px; margin: 0 auto 24px; padding: 0 16px; }
+    .martalar-intro-box { background: linear-gradient(135deg, #3d1f08 0%, #7b3f1e 100%); color: white; border-radius: 16px; padding: 22px 24px; margin-bottom: 20px; display: flex; gap: 16px; align-items: flex-start; }
+    .mib-icon { font-size: 44px; flex-shrink: 0; line-height: 1; }
+    .mib-text h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; color: #FFD6A5; margin-bottom: 6px; }
+    .mib-text p  { font-size: 14px; line-height: 1.7; opacity: 0.92; }
+    .mib-text a  { color: #FFD6A5; }
+    .m-gruppo { margin-bottom: 16px; }
+    .m-gruppo-header { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 10px; margin-bottom: 8px; font-weight: 700; font-size: 14px; }
+    .mg-verde   { background: #D8F3DC; color: #1B4332; }
+    .mg-giallo  { background: #FFF9C4; color: #7B6000; }
+    .mg-arancio { background: #FFE8D6; color: #8B4513; }
+    .mg-rosso   { background: #FFE4E1; color: #8B0000; }
+    .m-item { display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; background: white; border-radius: 10px; margin-bottom: 7px; border-left: 4px solid #8B4513; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .m-emoji { font-size: 22px; flex-shrink: 0; padding-top: 2px; }
+    .m-body  { flex: 1; min-width: 0; }
+    .m-nome  { font-weight: 700; font-size: 15px; color: #3d1f08; margin-bottom: 2px; }
+    .m-loc   { font-size: 12px; color: #8B4513; margin-bottom: 3px; }
+    .m-desc  { font-size: 13px; color: #555; line-height: 1.5; }
+    .m-tags  { margin-top: 5px; display: flex; flex-wrap: wrap; gap: 4px; }
+    .m-tag   { font-size: 11px; border-radius: 10px; padding: 2px 8px; font-weight: 700; }
+    .tag-guida { background: #D8F3DC; color: #1B4332; }
+    .tag-dist  { background: #8B4513; color: white; }
+    .tag-nota  { background: #FFF9C4; color: #7B6000; }
+    .tag-info  { background: #EEE; color: #555; }
+    .tag-maps  { background: #4285F4; color: white !important; text-decoration: none; }
+    /* MARTALAR ARTIST PROFILE */
+    .ap-card { background: linear-gradient(135deg, #2c1005 0%, #6b3520 60%, #8B4513 100%); color: white; border-radius: 18px; padding: 28px 24px; margin-bottom: 18px; }
+    .ap-card h3 { font-family: 'Playfair Display', serif; font-size: 21px; color: #FFD6A5; margin-bottom: 3px; }
+    .ap-card .ap-sub { font-size: 13px; opacity: 0.78; margin-bottom: 18px; letter-spacing: 0.2px; }
+    .ap-intro { font-size: 15px; line-height: 1.8; opacity: 0.93; margin-bottom: 16px; }
+    .ap-quote { border-left: 4px solid #FFD6A5; padding: 10px 16px; font-style: italic; font-size: 16px; background: rgba(255,255,255,0.09); border-radius: 0 8px 8px 0; margin: 0 0 18px; line-height: 1.6; }
+    .ap-facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; margin-bottom: 18px; }
+    .ap-fact { background: rgba(255,255,255,0.11); border-radius: 10px; padding: 10px 13px; }
+    .ap-fact .af-label { font-size: 10px; opacity: 0.65; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 3px; }
+    .ap-fact .af-val { font-size: 13px; font-weight: 700; line-height: 1.3; }
+    .ap-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ap-link { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.28); color: #FFD6A5; border-radius: 20px; padding: 6px 14px; font-size: 13px; font-weight: 700; text-decoration: none; }
+    .ap-box { border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; }
+    .ap-box h4 { font-size: 16px; margin-bottom: 8px; }
+    .ap-box p  { font-size: 14px; line-height: 1.75; }
+    .ap-box ul { font-size: 14px; line-height: 1.75; padding-left: 18px; }
+    .ap-vaia  { background: white; border-left: 5px solid #8B4513; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+    .ap-vaia h4 { color: #3d1f08; }
+    .ap-vaia p  { color: #555; }
+    .ap-tecnica { background: #FFF9C4; border-left: 5px solid #c8a000; }
+    .ap-tecnica h4 { color: #7B6000; }
+    .ap-tecnica p, .ap-tecnica ul li { color: #5a4800; }
+    .ap-filosofia { background: var(--verde-pallido); border-left: 5px solid var(--verde-chiaro); }
+    .ap-filosofia h4 { color: var(--verde); }
+    .ap-filosofia p, .ap-filosofia ul li { color: #2a5240; }
+    /* SCHEDE LUOGO */
+    .schede-intro {
+      background: white;
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 16px 0 24px;
+      border-left: 5px solid var(--verde);
+      font-size: 16px;
+      color: #333;
+    }
+    .schede-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 18px;
+      margin: 20px 0;
+    }
+    .scheda {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 3px 16px var(--ombra);
+      border: 1px solid rgba(116,198,157,0.25);
+      display: flex;
+      flex-direction: column;
+    }
+    .scheda-header {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .scheda-ic { font-size: 30px; }
+    .scheda-header h3 { font-size: 17px; color: white; line-height: 1.2; font-family: 'Playfair Display', Georgia, serif; }
+    .scheda-header p { font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 2px; }
+    .scheda-body { padding: 14px 18px; flex: 1; }
+    .scheda-desc { font-size: 15px; color: #444; margin-bottom: 12px; line-height: 1.6; }
+    .criteri {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+    .criterio {
+      background: var(--verde-sfondo);
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 13px;
+      color: #2a3a2a;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .criterio .c-label { font-weight: 700; display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; color: var(--verde); }
+    .criterio .c-val { display: block; }
+    .scheda-footer { padding: 10px 18px 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .scheda-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--verde);
+      color: white !important;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .scheda-btn:hover { background: var(--verde-medio); }
+    .scheda-btn.btn-outline {
+      background: white;
+      color: var(--verde) !important;
+      border: 2px solid var(--verde);
+    }
+    /* colori header schede */
+    .sc-verde .scheda-header { background: linear-gradient(135deg, #2D6A4F, #52B788); }
+    .sc-blu .scheda-header { background: linear-gradient(135deg, #1E6091, #2F80B5); }
+    .sc-viola .scheda-header { background: linear-gradient(135deg, #4A2080, #7B52B8); }
+    .sc-oro .scheda-header { background: linear-gradient(135deg, #5B4A00, #9B7E00); }
+    .sc-rosso .scheda-header { background: linear-gradient(135deg, #7D4F50, #B07880); }
+    .sc-teal .scheda-header { background: linear-gradient(135deg, #0D6E6E, #1aada6); }
+    .sc-arancio .scheda-header { background: linear-gradient(135deg, #C45000, #E07830); }
+    .sc-mont .scheda-header { background: linear-gradient(135deg, #3A5A40, #6B9E5A); }
+    .badge-diff {
+      display: inline-block;
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .bd-verde { background: #d4edda; color: #155724; }
+    .bd-giallo { background: #fff3cd; color: #856404; }
+    /* NAV STICKY */
+    .nav-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #1B4332;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.28);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav-sticky::-webkit-scrollbar { height: 3px; }
+    .nav-sticky::-webkit-scrollbar-track { background: #1B4332; }
+    .nav-sticky::-webkit-scrollbar-thumb { background: var(--verde-chiaro); border-radius: 3px; }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0 10px;
+      min-width: max-content;
+    }
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 13px 13px;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover {
+      color: white;
+      border-bottom-color: var(--verde-chiaro);
+      background: rgba(255,255,255,0.08);
+    }
+    /* link ambiti nel nav – colore leggermente diverso per distinguerli */
+    .nav-links .nav-ambito a { color: rgba(255,255,255,0.88); }
+    .nav-links .nav-ambito a:hover { border-bottom-color: #FFD166; color: white; }
+    /* separatore verticale */
+    .nav-sep {
+      align-self: stretch;
+      display: flex;
+      align-items: stretch;
+      padding: 0 3px;
+    }
+    .nav-sep::after {
+      content: '';
+      display: block;
+      width: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 9px 0;
+    }
+    /* AMBITI QUICK JUMP */
+    .ambiti-quicknav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 22px;
+    }
+    .aqn-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: white;
+      border: 2px solid var(--verde-chiaro);
+      color: var(--verde) !important;
+      border-radius: 22px;
+      padding: 7px 15px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .aqn-btn:hover { background: var(--verde-pallido); border-color: var(--verde); }
+    /* BACK TO TOP */
+    .back-to-top {
+      text-align: center;
+      margin: 36px 0 0;
+    }
+    .back-to-top a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--verde-pallido);
+      color: var(--verde) !important;
+      border-radius: 22px;
+      padding: 9px 22px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid var(--verde-chiaro);
+      transition: all 0.2s;
+    }
+    .back-to-top a:hover { background: var(--verde-chiaro); color: white !important; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--verde);
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+    }
+    footer strong { color: white; }
+
+    /* PRINT */
+    @media print {
+      body { background: white; font-size: 14px; }
+      .hero { background: #2D6A4F !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .day-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .mappa-link { border: 1px solid #2D6A4F; color: #2D6A4F !important; background: white !important; }
+      .day-card { break-inside: avoid; }
+    }
+
+    @media (max-width: 600px) {
+      .day-header { padding: 16px 20px; }
+      .day-body { padding: 18px 20px; }
+      .day-number { font-size: 36px; }
+      .hotel-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <span class="hero-emoji">🏔️</span>
+  <h1>Guida Vacanza a Vattaro</h1>
+  <p class="hero-sub">Altopiano della Vigolana · Trentino</p>
+  <div>
+    <span class="badge-hero">📅 10 – 17 Giugno 2026</span>
+    <span class="badge-hero">🏨 Albergo Cinzia</span>
+    <span class="badge-hero">🚶 Ritmo tranquillo</span>
+  </div>
+</div>
+
+<!-- NAV STICKY -->
+<nav class="nav-sticky" aria-label="Navigazione guida">
+  <ul class="nav-links">
+    <li><a href="#hotel">🏠 Albergo Cinzia</a></li>
+    <li class="nav-sep"></li>
+    <li class="nav-ambito"><a href="#amb-laghi">🌊 Laghi &amp; Terme</a></li>
+    <li class="nav-ambito"><a href="#amb-montagna">🏔️ Panorami</a></li>
+    <li class="nav-ambito"><a href="#amb-arte">🎨 Arte nel Bosco</a></li>
+    <li class="nav-ambito"><a href="#amb-musei">🏛️ Trento &amp; Musei</a></li>
+    <li class="nav-ambito"><a href="#amb-borghi">🏘️ Borghi</a></li>
+    <li class="nav-ambito"><a href="#amb-food">🍽️ Mangiare &amp; Caffè</a></li>
+    <li class="nav-ambito"><a href="#amb-pioggia">☔ Se Piove</a></li>
+    <li class="nav-ambito"><a href="#martalar">🐺 Martalar – L'Artista</a></li>
+    <li class="nav-ambito"><a href="#martalar-opere">🗺️ Tutte le Opere</a></li>
+    <li class="nav-sep"></li>
+    <li><a href="#programma">📅 Itinerario 7 Giorni</a></li>
+    <li><a href="#consigli">💡 Info Pratiche</a></li>
+    <li><a href="#emergenze">🆘 SOS</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <!-- INFO HOTEL -->
+  <h2 class="section-title" id="hotel">🏨 La Vostra Base</h2>
+
+  <div class="hotel-card">
+    <h3>Albergo Cinzia – Vattaro</h3>
+    <div class="hotel-row"><span class="ic">📍</span><span>Via Bolghera, Vattaro (TN) · Altopiano della Vigolana, 700 m s.l.m.</span></div>
+    <div class="hotel-row"><span class="ic">🅿️</span><span>Parcheggio privato gratuito incluso</span></div>
+    <div class="hotel-row"><span class="ic">🛗</span><span>Ascensore disponibile in hotel</span></div>
+    <div class="hotel-row"><span class="ic">🍽️</span><span>Ristorante e bar interni</span></div>
+    <div class="hotel-row"><span class="ic">📶</span><span>Wi-Fi gratuito in tutto l'hotel</span></div>
+    <div class="hotel-row"><span class="ic">🌿</span><span>Grande giardino · Aria fresca di montagna</span></div>
+    <div class="hotel-row"><span class="ic">💧</span><span><strong>Acqua del rubinetto potabile</strong> – anche nel bagno della camera! Potete bere tranquillamente dal rubinetto ovunque in Trentino</span></div>
+  </div>
+
+  <div class="box box-verde">
+    <div class="box-ic">🌡️</div>
+    <div class="box-body">
+      <strong>Clima a giugno sull'Altopiano</strong>
+      <p>Temperature gradevoli: 18–26°C di giorno, 12–16°C la sera. Possibili temporali pomeridiani tipici della montagna. Portate sempre una giacca leggera e un ombrellino!</p>
+    </div>
+  </div>
+
+  <!-- SCHEDE LUOGHI -->
+  <h2 class="section-title" id="schede">🗺️ Scegli la Tua Giornata</h2>
+
+  <div class="schede-intro">
+    Qui trovate <strong>tutti i luoghi</strong> da visitare con le informazioni essenziali per scegliere in base a come vi sentite quel giorno. Ogni scheda indica la fatica richiesta, i costi, il parcheggio e se è adatto in caso di pioggia. Il programma giorno per giorno più avanti è solo un suggerimento!
+  </div>
+
+  <div class="schede-grid">
+
+    <!-- FIABE NEL BOSCO -->
+    <div class="scheda sc-verde">
+      <div class="scheda-header">
+        <div class="scheda-ic">🧚</div>
+        <div>
+          <h3>Fiabe nel Bosco</h3>
+          <p>Sentiero tematico · Vigolana · Vicino all'albergo</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Percorso nel bosco con sculture in legno di fiabe e leggende. Stradina forestale regolare, libri illustrati lungo il cammino.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Nessuna – 80m dislivello</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ 1,5 – 2 ore</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💚 Gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">🌧️ Non ideale</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">✅ Nessuno</span></span></div>
+          <div class="criterio"><span><span class="c-label">Panchine</span><span class="c-val">✅ Frequenti</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 5 min dall'albergo</span></span></div>
+        </div>
+      </div>
+      <div class="scheda-footer">
+        <a class="scheda-btn" href="https://www.visittrentino.info/it/guida/tour/le-fiabe-nel-bosco_tour_56101705" target="_blank">🔗 Scheda ufficiale</a>
+      </div>
+    </div>
+
+    <!-- LAGO DI CALCERANICA -->
+    <div class="scheda sc-blu">
+      <div class="scheda-header">
+        <div class="scheda-ic">🏖️</div>
+        <div>
+          <h3>Lago di Calceranica</h3>
+          <p>Lago balneabile · Spiaggia · Tunga Beach Bar</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Bella spiaggia con poca gente. Si parcheggia gratis alla chiesa e si raggiunge il lago in 5 minuti a piedi pianeggianti attraverso un sottopasso.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Minima – 5 min</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ Mezza giornata</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💚 Spiaggia gratuita</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito (chiesa)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">🌧️ Non adatto</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">✅ Nessuno</span></span></div>
+          <div class="criterio"><span><span class="c-label">Bar & bagni</span><span class="c-val">✅ Sì (Tunga Bar)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 15 min dall'albergo</span></span></div>
+        </div>
+      </div>
+      <div class="scheda-footer">
+        <a class="scheda-btn" href="https://maps.app.goo.gl/2CJgt2rRe52x9Rvx7" target="_blank">🅿️ Parcheggio</a>
+        <a class="scheda-btn btn-outline" href="https://maps.app.goo.gl/wKVprx4pX2UoLoua6" target="_blank">🍹 Tunga Bar</a>
+      </div>
+    </div>
+
+    <!-- VETRIOLO TERME -->
+    <div class="scheda sc-teal">
+      <div class="scheda-header">
+        <div class="scheda-ic">🏔️</div>
+        <div>
+          <h3>Vetriolo Terme</h3>
+          <p>Balcone panoramico · 1.600 m · Sopra Levico</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Si sale da Levico con una strada di tornanti in soli 15 minuti. Vista mozzafiato sulle Dolomiti e la Valsugana. Sorgenti minerali storiche. Si gode tutto dall'auto o con brevissime passeggiate.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Nessuna (solo auto)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ 1 – 1,5 ore</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💚 Gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">⚠️ Panorama ridotto</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">✅ Nessuno</span></span></div>
+          <div class="criterio"><span><span class="c-label">Bar & bagni</span><span class="c-val">✅ Rifugio in quota</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 20 min (via Levico)</span></span></div>
+        </div>
+        <div style="background:#fde8e8;border-left:4px solid #c0392b;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px;color:#7b2d2d;">
+          ⚠️ <strong>Solo in auto!</strong> Il sentiero a piedi da Levico a Vetriolo è una salita di oltre <strong>900 m di dislivello</strong> su strada di montagna — molto impegnativo, non adatto per questa vacanza.
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVICO TERME -->
+    <div class="scheda sc-rosso">
+      <div class="scheda-header">
+        <div class="scheda-ic">🌳</div>
+        <div>
+          <h3>Levico Terme</h3>
+          <p>Parco Asburgico · Centro storico · Gratuito</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Parco storico con viali ombreggiati, fontane e laghetto. Stesso parcheggio gratuito per centro paese e corso liberty.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Minima – tutto piano</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ 2 – 3 ore</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💚 Parco gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito (stazione)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">🌤️ Bar e negozi al coperto</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">✅ Nessuno</span></span></div>
+          <div class="criterio"><span><span class="c-label">Panchine</span><span class="c-val">✅ Numerose nel parco</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 12 min dall'albergo</span></span></div>
+        </div>
+        <p style="font-size:13px;color:#555;">🕙 Parco: aperto tutti i giorni, tutto il giorno</p>
+      </div>
+      <div class="scheda-footer">
+        <a class="scheda-btn" href="https://maps.app.goo.gl/4ZWVNyFYdpWz8vkJ6" target="_blank">🅿️ Parcheggio gratuito</a>
+      </div>
+    </div>
+
+    <!-- BORGO VALSUGANA -->
+    <div class="scheda sc-rosso">
+      <div class="scheda-header">
+        <div class="scheda-ic">🏰</div>
+        <div>
+          <h3>Borgo Valsugana</h3>
+          <p>Centro medievale · Fiume Brenta · Castel Telvana</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Borgo medievale affascinante sul fiume Brenta. Ponte Veneziano, vicoli storici, Castel Telvana e mostra della Grande Guerra.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Minima – tutto piano</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ 1,5 – 2 ore</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💚 Gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">🌤️ Bar e portici</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">⚠️ Qualcuno (castello)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Bar & bagni</span><span class="c-val">✅ Sì</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 25 min dall'albergo</span></span></div>
+        </div>
+      </div>
+      <div class="scheda-footer">
+        <a class="scheda-btn" href="https://maps.app.goo.gl/2C65psAoQC8gWgKr6" target="_blank">🗺️ Mappa</a>
+      </div>
+    </div>
+
+    <!-- ARTE SELLA -->
+    <div class="scheda sc-verde">
+      <div class="scheda-header">
+        <div class="scheda-ic">🌿</div>
+        <div>
+          <h3>Arte Sella</h3>
+          <p>Arte contemporanea nella natura · Val di Sella</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Sculture monumentali di artisti internazionali immerse nel bosco. La Cattedrale Vegetale è l'opera simbolo. Percorso su sterrato, 15 min dal parcheggio.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟡 Leggera – sterrato</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ 2 – 2,5 ore</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💶 11€ a persona</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito (50 posti)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">🌧️ Non adatto</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">✅ Nessuno</span></span></div>
+          <div class="criterio"><span><span class="c-label">Bar & bagni</span><span class="c-val">✅ Sì</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 30 min dall'albergo</span></span></div>
+        </div>
+        <p style="font-size:13px;color:#555;">🕙 Giugno: tutti i giorni 10:00–19:00</p>
+      </div>
+      <div class="scheda-footer">
+        <a class="scheda-btn" href="https://artesella.it/visita/tariffe-e-orari/" target="_blank">🔗 Sito ufficiale</a>
+      </div>
+    </div>
+
+    <!-- TRENTO -->
+    <div class="scheda sc-oro">
+      <div class="scheda-header">
+        <div class="scheda-ic">🏛️</div>
+        <div>
+          <h3>Trento</h3>
+          <p>Castello · Duomo · MUSE · Parcheggio P7 gratuito</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Tre mete in città: Castello del Buonconsiglio, Duomo in piazza e MUSE (museo scienze). Scegliete 1 o 2 — non fatele tutte in un giorno se siete stanchi!</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟡 Moderata – marciapiedi</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ Giornata intera</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💶 ~10–12€/museo</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito (P7)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">☔ Ottimo (musei coperti)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">⚠️ Qualcuno (castello)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Chiusura</span><span class="c-val">⛔ Lunedì chiusi</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 30 min dall'albergo</span></span></div>
+        </div>
+      </div>
+      <div class="scheda-footer">
+        <a class="scheda-btn" href="https://maps.app.goo.gl/RZuabQiWsgyKo7oz6" target="_blank">🅿️ Parcheggio P7</a>
+      </div>
+    </div>
+
+    <!-- ALTOPIANO DI PINE -->
+    <div class="scheda sc-mont">
+      <div class="scheda-header">
+        <div class="scheda-ic">🌊</div>
+        <div>
+          <h3>Altopiano di Piné – Laghi</h3>
+          <p>Lago di Serraia · Lago Santo · Passeggiata pianeggiante</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Percorso attorno ai laghi alpini su pista ciclabile/pedonale piatta. Panchine ogni 200m. Basta fare il giro che si riesce, senza meta prefissa.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Minima – tutto piano</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ 2 – 4 ore (a piacere)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💚 Gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito (lago)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">🌧️ Non adatto</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">✅ Nessuno</span></span></div>
+          <div class="criterio"><span><span class="c-label">Panchine</span><span class="c-val">✅ Ogni 200m</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 20 min dall'albergo</span></span></div>
+        </div>
+      </div>
+      <div class="scheda-footer">
+        <a class="scheda-btn" href="https://maps.app.goo.gl/LxzVka3zE3tX3g7X7" target="_blank">🅿️ Parcheggio 1</a>
+        <a class="scheda-btn btn-outline" href="https://maps.app.goo.gl/UPwCpLqjoaUwj5S3A" target="_blank">🅿️ Parcheggio 2</a>
+      </div>
+    </div>
+
+    <!-- LAVARONE -->
+    <div class="scheda sc-viola">
+      <div class="scheda-header">
+        <div class="scheda-ic">🐉</div>
+        <div>
+          <h3>Lavarone</h3>
+          <p>Lago balneabile · Drago di Vaia · 1.100 m</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Lago di montagna con spiagge attrezzate. Il Drago di Vaia (scultura in legno più grande d'Europa) è raggiungibile con breve sentiero facile. Più fresco di 3–5°C rispetto a Vattaro.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Minima (lago)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ Mezza giornata</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💚 Lago gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">🌧️ Non adatto</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">✅ Nessuno (lago)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Bar & bagni</span><span class="c-val">✅ Sì (riva lago)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 35 min dall'albergo</span></span></div>
+        </div>
+        <p style="font-size:13px;color:#555;">🧥 Portate una giacca — è più fresco!</p>
+      </div>
+    </div>
+
+    <!-- MONTE BONDONE -->
+    <div class="scheda sc-mont">
+      <div class="scheda-header">
+        <div class="scheda-ic">🌸</div>
+        <div>
+          <h3>Monte Bondone – Giardino Botanico</h3>
+          <p>Viote · 1.538 m · Via Trento · Aperto dal 31 maggio</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Giardino botanico alpino con 1.000 specie di piante rare su 10 ettari. Percorso lento e contemplativo tra laghi, torbiere e praterie fiorite. Si raggiunge da Trento in 30 min di auto.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Leggera – pianeggiante</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ 2 – 3 ore</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💶 Verificare sul sito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito (Viote)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">🌧️ Non adatto</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">✅ Nessuno</span></span></div>
+          <div class="criterio"><span><span class="c-label">Bar & bagni</span><span class="c-val">✅ Sì</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 40 min (via Trento)</span></span></div>
+        </div>
+        <p style="font-size:13px;color:#555;">🧥 In quota: portate sempre una giacca!</p>
+      </div>
+      <div class="scheda-footer">
+        <a class="scheda-btn" href="https://www.muse.it/home/scopri-il-museo/il-muse-sul-territorio/giardino-botanico-alpino/" target="_blank">🔗 Info MUSE</a>
+      </div>
+    </div>
+
+    <!-- LAGO DI CALDONAZZO -->
+    <div class="scheda sc-blu">
+      <div class="scheda-header">
+        <div class="scheda-ic">🚣</div>
+        <div>
+          <h3>Lago di Caldonazzo</h3>
+          <p>Il lago più grande del Trentino · Riva pianeggiante</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Il lago più grande interamente in Trentino (5 km di lunghezza). Passeggiata lungo la riva su percorso comodo e pianeggiante, lido attrezzato, bar con vista sull'acqua. Vicino a Calceranica.</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Minima – tutto piano</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ 2 – 3 ore</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💚 Gratuito (riva libera)</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito vicino al lago</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">⛔ Meglio rinviare</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">✅ Nessuno</span></span></div>
+          <div class="criterio"><span><span class="c-label">Bar & bagni</span><span class="c-val">✅ Lido attrezzato</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 15 min dall'albergo</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASTEL TESINO -->
+    <div class="scheda sc-mont">
+      <div class="scheda-header">
+        <div class="scheda-ic">🦅</div>
+        <div>
+          <h3>Castel Tesino e i Grifoni</h3>
+          <p>Borgo medievale · Valle del Tesino · Avvistamento rapaci</p>
+        </div>
+      </div>
+      <div class="scheda-body">
+        <p class="scheda-desc">Antico borgo di montagna nella Valle del Tesino. Famoso per il <strong>ritorno del Grifone</strong>: questi maestosi rapaci (2 m di apertura alare!) si possono osservare planare sulle creste. Cielo spettacolare!</p>
+        <div class="criteri">
+          <div class="criterio"><span><span class="c-label">Fatica</span><span class="c-val">🟢 Minima – centro pianeggiante</span></span></div>
+          <div class="criterio"><span><span class="c-label">Durata</span><span class="c-val">⏱️ 2 – 3 ore</span></span></div>
+          <div class="criterio"><span><span class="c-label">Costo</span><span class="c-val">💚 Gratuito</span></span></div>
+          <div class="criterio"><span><span class="c-label">Parcheggio</span><span class="c-val">🅿️ Gratuito in paese</span></span></div>
+          <div class="criterio"><span><span class="c-label">Se piove</span><span class="c-val">🏘️ Borgo storico al coperto</span></span></div>
+          <div class="criterio"><span><span class="c-label">Scale/gradini</span><span class="c-val">⚠️ Qualche salita in paese</span></span></div>
+          <div class="criterio"><span><span class="c-label">Binocolo</span><span class="c-val">🔭 Portatelo!</span></span></div>
+          <div class="criterio"><span><span class="c-label">Distanza</span><span class="c-val">🚗 50 min (via Borgo Valsugana)</span></span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- AMBITI -->
+  <h2 class="section-title" id="ambiti">🗂️ Esplora per Categoria</h2>
+
+  <div class="schede-intro">
+    Un altro modo per scegliere: <strong>cercare in base a cosa vi va di fare</strong>. Laghi, montagna, arte, buona cucina… trovate subito tutti i posti adatti!
+  </div>
+
+  <div class="ambiti-grid">
+
+    <!-- LAGHI E SPIAGGE -->
+    <div class="ambito-card" id="amb-laghi">
+      <div class="ambito-header ah-laghi">
+        <div class="a-ic">🌊</div>
+        <div>
+          <h3>Laghi e Spiagge</h3>
+          <p>Per rinfrescarsi e rilassarsi vicino all'acqua</p>
+        </div>
+      </div>
+      <div class="ambito-body">
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Lago di Calceranica &amp; Levico</div>
+            <div class="a-note">Spiagge accessibili · Parcheggio gratuito vicino · Acque sicure · ~20 min da Vattaro</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Tunga Beach Bar – Lago Calceranica</div>
+            <div class="a-note">Spiaggia tranquilla con poca gente · Bar · Parcheggio libero · Ideale per una mezza giornata</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Lago di Lavarone</div>
+            <div class="a-note">Lago alpino pittoresco · Passeggiata pianeggiante intorno · ~35 min da Vattaro</div>
+          </div>
+          <span class="a-badge">🟡 Moderato</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Altopiano di Piné – Lago delle Piazze</div>
+            <div class="a-note">Lago immerso nei boschi · Due parcheggi gratuiti segnalati · ~25 min da Vattaro</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Lago di Caldonazzo</div>
+            <div class="a-note">Il lago più grande del Trentino · Riva pianeggiante · Lido e bar · ~15 min da Vattaro</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MONTAGNA E PANORAMI -->
+    <div class="ambito-card" id="amb-montagna">
+      <div class="ambito-header ah-montagna">
+        <div class="a-ic">🏔️</div>
+        <div>
+          <h3>Montagna e Panorami</h3>
+          <p>Viste mozzafiato senza necessariamente fare trekking</p>
+        </div>
+      </div>
+      <div class="ambito-body">
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Vetriolo Terme</div>
+            <div class="a-note">Strada panoramica sopra Levico · Sorgenti termali · Aria fresca · Si arriva in auto fino in cima</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Monte Bondone</div>
+            <div class="a-note">Si sale in auto da Trento · Panorama sulle Dolomiti · Giardino Alpino in estate · ~50 min da Vattaro</div>
+          </div>
+          <span class="a-badge">🟡 Moderato</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Altopiano di Lavarone</div>
+            <div class="a-note">Paesaggio di guerra e natura · Boschi e praterie · Passeggiate facili · ~40 min da Vattaro</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTE E SCULTURE -->
+    <div class="ambito-card" id="amb-arte">
+      <div class="ambito-header ah-arte">
+        <div class="a-ic">🎨</div>
+        <div>
+          <h3>Arte e Sculture</h3>
+          <p>Installazioni, natura e creatività</p>
+        </div>
+      </div>
+      <div class="ambito-body">
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Arte Sella</div>
+            <div class="a-note">Sculture giganti nella foresta · Percorso nel bosco ~2 km · Biglietto €8 · Navetta o breve cammino · ~50 min da Vattaro</div>
+          </div>
+          <span class="a-badge">🟡 Moderato</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">🐺 Lupa di Martalar – Vattaro</div>
+            <div class="a-note">Scultura iconica di Marco Martalar · Camminatina breve dal paese · Gratuito · Da non perdere!</div>
+          </div>
+          <span class="a-badge">🟢 Facilissimo</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Fiabe nel Bosco – Sentiero Martalar</div>
+            <div class="a-note">Percorso con sculture in legno ispirate alle fiabe · Vicinissimo all'Albergo Cinzia · Gratuito</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Drago di Vaia – Lavarone</div>
+            <div class="a-note">Scultura enorme realizzata con il legno caduto nella tempesta Vaia 2018 · Simbolo di rinascita</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MUSEI E CULTURA -->
+    <div class="ambito-card" id="amb-musei">
+      <div class="ambito-header ah-musei">
+        <div class="a-ic">🏛️</div>
+        <div>
+          <h3>Musei e Cultura</h3>
+          <p>Ideale anche con la pioggia</p>
+        </div>
+      </div>
+      <div class="ambito-body">
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">MUSE – Museo delle Scienze</div>
+            <div class="a-note">Trento · Museo moderno e coinvolgente · Ascensori · Biglietto ~€11 · Orari: mar–dom 10:00–18:00</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Castello del Buonconsiglio</div>
+            <div class="a-note">Trento · Castello medievale magnifico · Molte scale (ascensore parziale) · Biglietto ~€10 · Orari: mar–dom 10:00–18:00</div>
+          </div>
+          <span class="a-badge">🟡 Moderato</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Duomo di Trento e Piazza del Duomo</div>
+            <div class="a-note">Centro storico di Trento · A piedi dal parcheggio · Ingresso gratuito alla piazza</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BORGHI E STORIA -->
+    <div class="ambito-card" id="amb-borghi">
+      <div class="ambito-header ah-borghi">
+        <div class="a-ic">🏘️</div>
+        <div>
+          <h3>Borghi e Storia</h3>
+          <p>Passeggiare tra vie storiche e scorci pittoreschi</p>
+        </div>
+      </div>
+      <div class="ambito-body">
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Borgo Valsugana</div>
+            <div class="a-note">Grazioso borgo medievale con torrente · Centro pedonale · Parcheggio gratuito · ~30 min da Vattaro</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Levico Terme – Centro Storico</div>
+            <div class="a-note">Cittadina termale elegante · Negozi e caffè · Parco Asburgico a piedi · Parcheggio gratuito in centro</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Trento – Città Storica</div>
+            <div class="a-note">Capoluogo del Trentino · Piazze, palazzi, musei · Parcheggio Sanseverino P7 e gratuito vicino</div>
+          </div>
+          <span class="a-badge">🟡 Moderato</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Vattaro e dintorni</div>
+            <div class="a-note">Il borgo che vi ospita · Piccole passeggiate locali · Aria pulita sull'Altopiano della Vigolana</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">🦅 Castel Tesino e i Grifoni</div>
+            <div class="a-note">Borgo medievale nella Valle del Tesino · Avvistamento grifoni (apertura alare 2 m!) · ~50 min da Vattaro</div>
+          </div>
+          <span class="a-badge">🟢 Facile</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RISTORAZIONE E DOLCI -->
+    <div class="ambito-card" id="amb-food">
+      <div class="ambito-header ah-food">
+        <div class="a-ic">🍰</div>
+        <div>
+          <h3>Ristorazione e Dolci</h3>
+          <p>I migliori posti per mangiare e fare una pausa</p>
+        </div>
+      </div>
+      <div class="ambito-body">
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Panificio Campregher – Levico</div>
+            <div class="a-note">Pane fresco, focacce e pasticceria locale · Ottimo per colazione o pranzo veloce</div>
+          </div>
+          <span class="a-badge">🥐 Pane</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Pasticceria Marzari – Levico</div>
+            <div class="a-note">Caffetteria elegante con dolci artigianali · Ottima sosta pomeridiana</div>
+          </div>
+          <span class="a-badge">☕ Caffè</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Tunga Beach Bar – Calceranica</div>
+            <div class="a-note">Bar in riva al lago · Pranzo leggero · Aperitivo in riva all'acqua · Parcheggio libero</div>
+          </div>
+          <span class="a-badge">🌊 Lago</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Diciotto Dodici Gelateria – Levico</div>
+            <div class="a-note">Gelato artigianale di qualità · Perfetto dopo una passeggiata nel centro di Levico</div>
+          </div>
+          <span class="a-badge">🍦 Gelato</span>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">Albergo Cinzia – Ristorante</div>
+            <div class="a-note">Cucina trentina direttamente in hotel · Ideale per le sere in cui non si vuole uscire</div>
+          </div>
+          <span class="a-badge">🏨 Hotel</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SE PIOVE -->
+    <div class="ambito-card" id="amb-pioggia" style="grid-column: 1 / -1;">
+      <div class="ambito-header ah-pioggia">
+        <div class="a-ic">☔</div>
+        <div>
+          <h3>Se Piove… Nessun Problema!</h3>
+          <p>Attività al coperto o comunque piacevoli anche con brutto tempo</p>
+        </div>
+      </div>
+      <div class="ambito-body" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0 20px;">
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">🏛️ MUSE – Museo delle Scienze</div>
+            <div class="a-note">Interamente al coperto · Trento · Bellissimo!</div>
+          </div>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">🏰 Castello del Buonconsiglio</div>
+            <div class="a-note">Visita interna · Trento · Molto suggestivo</div>
+          </div>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">☕ Pasticceria Marzari</div>
+            <div class="a-note">Levico Terme · Sosta dolce al caldo</div>
+          </div>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">🛍️ Negozi di Levico</div>
+            <div class="a-note">Centro storico con portici · Passeggiata protetta</div>
+          </div>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">🍽️ Pranzo in hotel</div>
+            <div class="a-note">Albergo Cinzia · Piatto caldo e relax</div>
+          </div>
+        </div>
+        <div class="ambito-item">
+          <div>
+            <div class="a-nome">📚 Duomo di Trento</div>
+            <div class="a-note">Interno splendido · Entrata gratuita</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MARTALAR: BIO ARTISTA -->
+  <h2 class="section-title" id="martalar">🐺 Marco Martalar – L'Artista</h2>
+  <div class="schede-intro">
+    Dietro ogni scultura c'è un uomo, una storia e una filosofia. Scoprite chi è <strong>Marco Martalar</strong>, lo scultore che ha trasformato la devastazione di Vaia in arte monumentale di fama mondiale.
+  </div>
+
+  <div class="martalar-section">
+
+    <!-- Card principale -->
+    <div class="ap-card">
+      <h3>Marco Martello, in arte <em>Martalar</em></h3>
+      <div class="ap-sub">🏔️ Mezzaselva di Roana, Altopiano di Asiago · Di etnia Cimbra</div>
+
+      <div class="ap-quote">
+        «Ho visto la Pietà di Michelangelo a 12 anni. Rimasi folgorato. Dissi a me stesso che da grande avrei fatto lo scultore — per me era il massimo a cui un uomo potesse aspirare.»
+      </div>
+
+      <p class="ap-intro">
+        Marco Martello nasce e cresce sull'<strong>Altopiano di Asiago</strong>, immerso nei boschi di pini, larici e faggi che scendono fin quasi dentro al suo laboratorio di Mezzaselva di Roana.
+        Inizia a lavorare il legno a <strong>30 anni</strong>, dapprima nel modo classico — scavando, togliendo materia — poi la tempesta Vaia del 2018 cambia tutto per sempre.
+      </p>
+
+      <div class="ap-facts">
+        <div class="ap-fact">
+          <div class="af-label">Laboratorio</div>
+          <div class="af-val">Mezzaselva di Roana (VI)</div>
+        </div>
+        <div class="ap-fact">
+          <div class="af-label">Etnia</div>
+          <div class="af-val">Cimbra (popolo germanico alpino)</div>
+        </div>
+        <div class="ap-fact">
+          <div class="af-label">Prima grande opera Vaia</div>
+          <div class="af-val">Drago di Lavarone (2020)</div>
+        </div>
+        <div class="ap-fact">
+          <div class="af-label">Materiale</div>
+          <div class="af-val">Legno abbattuto da Vaia 2018</div>
+        </div>
+        <div class="ap-fact">
+          <div class="af-label">In TV</div>
+          <div class="af-val">Falegnami ad alta quota</div>
+        </div>
+        <div class="ap-fact">
+          <div class="af-label">Contatti</div>
+          <div class="af-val">marcomartalar@gmail.com</div>
+        </div>
+      </div>
+
+      <div class="ap-links">
+        <a href="https://martalar.it" target="_blank" class="ap-link">🌐 martalar.it</a>
+        <a href="https://www.instagram.com/martalar_official" target="_blank" class="ap-link">📸 Instagram</a>
+      </div>
+    </div>
+
+    <!-- La svolta: Vaia -->
+    <div class="ap-box ap-vaia">
+      <h4>🌪️ La svolta: ottobre 2018, la tempesta Vaia</h4>
+      <p>
+        La tempesta Vaia abbatte milioni di alberi nelle Alpi del nord-est in poche ore. Per Martalar è «come uno scossone, un terremoto interiore: nulla del bosco era come prima». Nei mesi successivi invece di piangere la distruzione, ogni mattina presto esce nel bosco con la sua sacca e raccoglie a mano radici e frammenti. Poi inizia ad <strong>aggiungere</strong>, non più togliere: rimettere insieme i pezzi del bosco in nuove forme monumentali. È la nascita di una tecnica rivoluzionaria e di uno stile inconfondibile.
+      </p>
+    </div>
+
+    <!-- La tecnica -->
+    <div class="ap-box ap-tecnica">
+      <h4>🔧 La tecnica: aggiungere, non togliere</h4>
+      <p>
+        Ogni scultura inizia con <strong>disegni preparatori</strong> che guidano l'animo ma non vincolano il risultato. È poi il <strong>legno stesso</strong> — con la sua fibra, la sua forma irregolare, la sua «musica» — a determinare la scultura finale. Migliaia di radici e frammenti vengono scelti uno a uno e assemblati attorno a uno <strong>scheletro interno in acciaio</strong> (che garantisce stabilità per decenni) con migliaia di viti. Il risultato sono figure sinuose, primordiali, che sembrano ancora vive e in movimento.
+      </p>
+      <ul>
+        <li>Una singola scultura: <strong>~2000 pezzi</strong> di legno + <strong>~3000 viti</strong></li>
+        <li>Tempo di realizzazione: da <strong>6 settimane a 2 anni</strong> a seconda dell'opera</li>
+        <li>Ogni pezzo è raccolto a mano, selezionato per forma e fibra</li>
+      </ul>
+    </div>
+
+    <!-- Filosofia -->
+    <div class="ap-box ap-filosofia">
+      <h4>💚 La filosofia: rispetto, rinascita, racconto</h4>
+      <p>
+        «Le mie opere nascono nella natura, ne diventano parte e cercano di integrarsi con rispetto nel paesaggio che le accoglie.» Per Martalar le sculture non sono semplici opere d'arte ma un <strong>racconto</strong>: vogliono creare un percorso ideale che unisca tutte le zone colpite da Vaia, ricordando ciò che è stato e che non dobbiamo dimenticare. «Quello che mi spinge non è il successo, ma la soddisfazione di star bene con me stesso e continuare a esprimermi liberamente.»
+      </p>
+      <ul>
+        <li>🌿 <strong>Rispetto</strong>: quando visitate le opere rispettate il luogo, la natura e chi le ospita</li>
+        <li>🔄 <strong>Rinascita</strong>: il legno caduto riprende vita — simbolo di resilienza dopo la distruzione</li>
+        <li>🗺️ <strong>Racconto</strong>: un cammino ideale che collega le ferite di Vaia da est a ovest delle Alpi</li>
+      </ul>
+    </div>
+
+  </div><!-- fine artista -->
+
+  <!-- MARTALAR: LE OPERE -->
+  <h2 class="section-title" id="martalar-opere">🗺️ Le Opere – Dal Più Vicino al Più Lontano</h2>
+  <div class="schede-intro">
+    Le opere di Martalar sono disseminate in Trentino e oltre: molte sono raggiungibili da Vattaro in una mezza giornata. Eccole tutte, <strong>dalla più vicina alla più lontana</strong> — distanze approssimative via strada.
+  </div>
+
+  <div class="martalar-section">
+
+    <div class="martalar-intro-box">
+      <div class="mib-icon">🪵</div>
+      <div class="mib-text">
+        <h3>La filosofia di Martalar</h3>
+        <p>«Da ciò che è frammento nasce l'insieme: come le radici che, unite, danno forma alle mie opere.» Ogni scultura nasce da centinaia di radici e frammenti di alberi spezzati da Vaia, assemblati uno a uno in forme monumentali che dialogano con il paesaggio.</p>
+        <p>Sito ufficiale: <a href="https://martalar.it" target="_blank">martalar.it</a> &nbsp;·&nbsp; Verifica sempre le posizioni aggiornate prima di partire.</p>
+      </div>
+    </div>
+
+    <!-- GRUPPO 1: VICINISSIMO -->
+    <div class="m-gruppo">
+      <div class="m-gruppo-header mg-verde">🟢 A due passi — entro 35 km da Vattaro</div>
+
+      <div class="m-item">
+        <div class="m-emoji">🐺</div>
+        <div class="m-body">
+          <div class="m-nome">Lupa del Lagorai</div>
+          <div class="m-loc">📍 Vetriolo Terme, Levico Terme (TN) · 2022</div>
+          <div class="m-desc">6 metri di altezza, ~2000 pezzi di legno Vaia, a 1600 m di quota al Pian della Casara. Muso rivolto alla luna: l'opera più iconica e amata di Martalar. Sentiero di 1 km dal parcheggio di Vetriolo.</div>
+          <div class="m-tags">
+            <a href="https://goo.gl/maps/6QkhsK9uSeWLjdn96" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~25 km</span>
+            <span class="m-tag tag-guida">⭐ In guida – Giorno 3</span>
+            <span class="m-tag tag-nota">⚠️ Solo in auto fino a Vetriolo, poi 1 km a piedi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🦌</div>
+        <div class="m-body">
+          <div class="m-nome">Cervo di Vaia</div>
+          <div class="m-loc">📍 Millegrobbe, Lavarone (TN)</div>
+          <div class="m-desc">Guardiano silenzioso dei prati di Lavarone a 1400 m. Figura raccolta e poetica, immersa nel paesaggio alpino. Facilmente combinabile con Drago e La Frau nella stessa gita.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Cervo+Vaia+Millegrobbe+Lavarone" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~28 km</span>
+            <span class="m-tag tag-info">Combinabile col Drago</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🐉</div>
+        <div class="m-body">
+          <div class="m-nome">Drago Vaia Regeneration</div>
+          <div class="m-loc">📍 Lavarone (TN) · 2024</div>
+          <div class="m-desc">Il drago originale fu bruciato dolosamente nel 2023. Ricostruito e inaugurato il 1° luglio 2024: simbolo di rinascita dopo la distruzione. Opera monumentale con un film-documentario dedicato.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Drago+Vaia+Magr%C3%A8+Lavarone" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~28 km</span>
+            <span class="m-tag tag-guida">⭐ In guida – Ambiti Arte</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🌿</div>
+        <div class="m-body">
+          <div class="m-nome">La Frau – Madre Natura</div>
+          <div class="m-loc">📍 Lavarone (TN) · 2023</div>
+          <div class="m-desc">Opera non figurativa: grande nucleo primordiale da cui nasce la vita. Richiama il legame profondo con la terra. Unica nel suo genere tra le opere di Martalar — più astratta e meditativa.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=La+Frau+Madre+Natura+Lavarone+Martalar" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~28 km</span>
+            <span class="m-tag tag-info">Combinabile col Drago e Cervo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">✨</div>
+        <div class="m-body">
+          <div class="m-nome">Terra e Cielo</div>
+          <div class="m-loc">📍 Maso Poli, Pressano di Lavis (TN) · 2023</div>
+          <div class="m-desc">Figura femminile alta 4 m che invoca gratitudine e rispetto per Madre Natura. Si trova presso la Cantina Poli — verificare l'accessibilità al pubblico prima di partire.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Maso+Poli+Pressano+Lavis+Trentino" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~30 km</span>
+            <span class="m-tag tag-nota">📞 Verificare apertura al pubblico</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUPPO 2: VICINO -->
+    <div class="m-gruppo">
+      <div class="m-gruppo-header mg-giallo">🟡 Gita mezza giornata — 40–70 km da Vattaro</div>
+
+      <div class="m-item">
+        <div class="m-emoji">🦅</div>
+        <div class="m-body">
+          <div class="m-nome">Aquila di Vaia</div>
+          <div class="m-loc">📍 Barricata, Grigno (TN) · 2023</div>
+          <div class="m-desc">7 m d'altezza, 5 m di lunghezza, 1600 kg: la più grande aquila in legno d'Europa. Sul Monte Cucco a 1380 m, si affaccia sulla piana della Marcesina devastata da Vaia. Raggiungibile in auto fino al Rifugio Barricata.</div>
+          <div class="m-tags">
+            <a href="https://goo.gl/maps/NKakqHCAgj7LQRn38" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~50 km</span>
+            <span class="m-tag tag-info">Auto fino al rifugio, pochi min a piedi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🐓</div>
+        <div class="m-body">
+          <div class="m-nome">Gallo Vaia</div>
+          <div class="m-loc">📍 Altopiano di Asiago (VI)</div>
+          <div class="m-desc">Scultura in legno Vaia sull'Altopiano di Asiago, in territorio veneto. Combinabile con una visita al celebre altopiano della Grande Guerra.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Gallo+Vaia+Martalar+Asiago" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~55 km</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🦁</div>
+        <div class="m-body">
+          <div class="m-nome">Grifone di Vaia</div>
+          <div class="m-loc">📍 Castel Tesino, loc. Celado (TN) · 2023</div>
+          <div class="m-desc">35 quintali, 2000 pezzi, 6 m d'altezza e 9 m di lunghezza. Guardiano del confine tra Trentino e Veneto a loc. Celado. Abbinabile all'avvistamento dei grifoni veri che planano sulla zona!</div>
+          <div class="m-tags">
+            <a href="https://goo.gl/maps/Tr3AdFPE45awWZ3U7" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~60 km</span>
+            <span class="m-tag tag-guida">⭐ In guida – Giorno 3 opzione B</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🦕</div>
+        <div class="m-body">
+          <div class="m-nome">Il Radicosauro</div>
+          <div class="m-loc">📍 Predaia (TN) · 2025</div>
+          <div class="m-desc">«Creatura pacifica e ancestrale che si rivela solo ai bambini, portando un messaggio di pace e armonia tra natura e uomo.» Opera recentissima del 2025 nella Val di Non.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Radicosauro+Martalar+Predaia+Val+di+Non" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~65 km</span>
+            <span class="m-tag tag-info">Inaugurato 2025 — novità!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUPPO 3: GITA INTERA GIORNATA -->
+    <div class="m-gruppo">
+      <div class="m-gruppo-header mg-arancio">🟠 Gita giornata intera — 70–120 km da Vattaro</div>
+
+      <div class="m-item">
+        <div class="m-emoji">🐊</div>
+        <div class="m-body">
+          <div class="m-nome">La Guana del Primiero</div>
+          <div class="m-loc">📍 Primiero (TN) · 2025</div>
+          <div class="m-desc">7 m d'altezza con oltre 2000 pezzi e radici raccolti nei boschi colpiti da Vaia. Imponente creatura preistorica nelle valli delle Pale di San Martino: paesaggio dolomitico da togliere il fiato.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Guana+del+Primiero+Martalar+Fiera+di+Primiero" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~80 km</span>
+            <span class="m-tag tag-info">Inaugurato 2025 — novità!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🐻</div>
+        <div class="m-body">
+          <div class="m-nome">Orso del Pradel</div>
+          <div class="m-loc">📍 Molveno (TN) · 2024</div>
+          <div class="m-desc">Orsa monumentale di 6 m d'altezza e 8 m di lunghezza: con ogni probabilità la più grande scultura di orso in legno del mondo. 2000 pezzi di radici di larice Vaia. Combinabile col lago di Molveno.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Orso+del+Pradel+Molveno+Martalar" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~90 km</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🐝</div>
+        <div class="m-body">
+          <div class="m-nome">Ape di Vaia</div>
+          <div class="m-loc">📍 San Pietro Mussolino (VI) · 2022</div>
+          <div class="m-desc">Grande scultura di ape che ricorda l'importanza di questo piccolo insetto per l'ecosistema. In territorio veneto, nella zona vicentina di Valdagno.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Ape+Vaia+Martalar+San+Pietro+Mussolino+Valdagno" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~95 km</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🐴</div>
+        <div class="m-body">
+          <div class="m-nome">Cavallo Haflinger</div>
+          <div class="m-loc">📍 Parco Ducali, Strembo, Val Rendena (TN) · 2023</div>
+          <div class="m-desc">9 m d'altezza e 5 m di lunghezza: il cavallo Haflinger in legno più grande d'Europa. 2000 radici di larice Vaia nel parco del paese, omaggio al cavallo simbolo del territorio.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Cavallo+Haflinger+Martalar+Strembo+Val+Rendena" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~110 km</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUPPO 4: LONTANO -->
+    <div class="m-gruppo">
+      <div class="m-gruppo-header mg-rosso">🔴 Fuori Trentino / Molto lontane — oltre 120 km</div>
+
+      <div class="m-item">
+        <div class="m-emoji">🦁</div>
+        <div class="m-body">
+          <div class="m-nome">Leone Alato</div>
+          <div class="m-loc">📍 Tarzo (TV), fronte Lago di Revine · 2025</div>
+          <div class="m-desc">Alta 7 m e lunga 10 m: con ogni probabilità il leone di legno più grande del mondo. Nelle colline del Prosecco in Veneto. Spettacolare.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=45.9809320,12.2216060" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~130 km</span>
+            <span class="m-tag tag-info">Inaugurato 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🦎</div>
+        <div class="m-body">
+          <div class="m-nome">Cevo Basilisco</div>
+          <div class="m-loc">📍 Cevo, Val Camonica (BS) · 2023</div>
+          <div class="m-desc">5 m d'altezza e 9 m di lunghezza. Creatura fantastica collocata nel piazzale dello Chalet Pineta a Cevo, in Val Camonica bresciana.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Basilisco+Martalar+Cevo+Val+Camonica" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~145 km</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🦌</div>
+        <div class="m-body">
+          <div class="m-nome">Cervo del Fertazza</div>
+          <div class="m-loc">📍 Selva di Cadore (BL) · 2025</div>
+          <div class="m-desc">Due anni e mezzo di lavoro: legno degli alberi abbattuti da Vaia nella zona del Fertazza. Opera recentissima in un contesto dolomitico straordinario.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Cervo+del+Fertazza+Martalar+Selva+di+Cadore" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~165 km</span>
+            <span class="m-tag tag-info">Inaugurato 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🦢</div>
+        <div class="m-body">
+          <div class="m-nome">Airone di Quinzano</div>
+          <div class="m-loc">📍 Quinzano d'Oglio (BS) · 2023</div>
+          <div class="m-desc">Grande airone nel parco di Quinzano d'Oglio (Brescia), riaperto e restaurato nel 2023. Realizzato con rami e legno della tempesta Vaia.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Airone+Martalar+Quinzano+d%27Oglio+Brescia" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~200 km</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item">
+        <div class="m-emoji">🦉</div>
+        <div class="m-body">
+          <div class="m-nome">Le Radici del Gufo</div>
+          <div class="m-loc">📍 Vaglio, Capriasca (TI, CH) · 2025</div>
+          <div class="m-desc">Gufo di oltre 4 m nella foresta di San Clemente a Vaglio (Capriasca, Canton Ticino): prima opera di Martalar fuori dall'Italia, inserita nel percorso di land art <em>ArtInBosco</em>.</div>
+          <div class="m-tags">
+            <a href="https://maps.google.com/?q=Bosco+San+Clemente+Vaglio+Capriasca+Ticino" target="_blank" class="m-tag tag-maps">📍 Maps</a>
+            <span class="m-tag tag-dist">~240 km</span>
+            <span class="m-tag tag-info">Inaugurato 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#FFF9C4;border-radius:10px;padding:12px 16px;font-size:13px;color:#7B6000;margin-top:4px;">
+      💡 <strong>Nota:</strong> Alcune opere sono <strong>itineranti</strong> e si spostano nel tempo. Le distanze sono approssimative via strada da Vattaro. Verifica sempre la posizione aggiornata su <a href="https://martalar.it" target="_blank" style="color:#7B6000;font-weight:700;">martalar.it</a> prima di partire.
+    </div>
+
+  </div><!-- fine martalar-section -->
+
+  <div class="back-to-top"><a href="#top">⬆️ Torna in cima</a></div>
+
+  <!-- PROGRAMMA -->
+  <h2 class="section-title" id="programma">📆 Programma Suggerito</h2>
+  <div class="schede-intro">Un'idea di organizzazione delle giornate — ma sentitevi liberi di cambiare, scambiare o saltare in base a come vi sentite!</div>
+
+  <!-- GIORNO 1 -->
+  <div class="day-card g1">
+    <div class="day-header">
+      <div class="day-number">1</div>
+      <div class="day-info">
+        <div class="data">Mercoledì 10 Giugno</div>
+        <h2>Arrivo e Scoperta di Vattaro</h2>
+      </div>
+      <div class="day-emoji">🏡</div>
+    </div>
+    <div class="day-body">
+      <span class="difficulty diff-facile">🟢 Facilissimo</span>
+      <p>Giorno di arrivo! Sistemate i bagagli, riposate e poi esplorate il pittoresco villaggio di Vattaro a piedi.</p>
+
+      <div class="attivita">
+        <h4>🧚 Le Fiabe nel Bosco – Sentiero Tematico</h4>
+        <p>Un percorso incantevole che si sviluppa proprio <strong>ai piedi della Vigolana</strong>, a due passi dall'albergo. Perfetto per una prima uscita rilassante!</p>
+        <ul>
+          <li>📏 <strong>3 km</strong> su strada forestale sterrata con fondo regolare – adatto a tutti</li>
+          <li>⛰️ Quota: da 1.020 m a 1.100 m – salita dolcissima (solo 80 m di dislivello)</li>
+          <li>🪵 Sculture in legno dei protagonisti delle <strong>fiabe classiche e leggende locali</strong></li>
+          <li>📖 Lungo il percorso ci sono "libri illustrati" con le storie da leggere all'ombra degli alberi</li>
+          <li>🌿 Nato nel 2020, è pensato per tutti – grandi e piccini</li>
+        </ul>
+        <div class="parcheggio">🕙 <strong>Orari:</strong> Sentiero all'aperto, accessibile liberamente tutto il giorno</div>
+        <a class="mappa-link" href="https://www.visittrentino.info/it/guida/tour/le-fiabe-nel-bosco_tour_56101705" target="_blank">🔗 Scheda ufficiale del percorso</a>
+      </div>
+
+      <div class="attivita">
+        <h4>🐺 La Lupa di Martalar – Camminatina imperdibile</h4>
+        <p>A pochi minuti dall'albergo si trova una delle opere più famose dello scultore <strong>Marco Martalar</strong>: la celebre <strong>Lupa di Vattaro</strong>, una scultura in legno a grandezza naturale di straordinaria forza espressiva, immersa nel bosco. Non perdetela!</p>
+        <ul>
+          <li>🚶 Breve camminatina (~20–30 min andata e ritorno) dal centro del paese</li>
+          <li>🌿 Sentiero facile, accessibile a tutti</li>
+          <li>📸 Ottima per foto ricordo tra arte e natura</li>
+          <li>💚 Gratuito – accessibile liberamente</li>
+        </ul>
+        <div class="parcheggio">💡 Chiedete all'Albergo Cinzia il percorso esatto per la Lupa: sono a due passi!</div>
+      </div>
+
+      <div class="attivita">
+        <h4>🥖 Panificio Campregher</h4>
+        <p>Da non perdere il <strong>Panificio Campregher</strong>, il forno locale di Vattaro. Ideale per fare colazione o comprare pane e dolci freschi da portare in gita!</p>
+        <a class="mappa-link" href="https://maps.app.goo.gl/tqLaS6R6eqYuXyqBA" target="_blank">🗺️ Apri su Google Maps</a>
+      </div>
+
+      <div class="attivita">
+        <h4>☕ Marzari – Caffetteria Pasticceria</h4>
+        <p>A <strong>Vigolo Vattaro</strong>, a pochi minuti dall'albergo, la <strong>Pasticceria Marzari</strong> è un'istituzione locale: colazioni, dolci artigianali, gelati e caffè di qualità. Gestita da Giorgio e Mariella, è il posto perfetto per iniziare la giornata con dolcezza!</p>
+        <ul>
+          <li>📍 Via Roma 9, Vigolo Vattaro</li>
+          <li>🍰 Pasticceria · Gelateria · Caffetteria</li>
+        </ul>
+        <a class="mappa-link" href="https://maps.app.goo.gl/GmMnX9LkkLwTDfa38" target="_blank">🗺️ Apri su Google Maps</a>
+      </div>
+
+      <div class="attivita">
+        <h4>🍽️ Cena in albergo o al ristorante del paese</h4>
+        <p>Serata tranquilla per ambientarsi. Godetevi la cucina trentina: canederli, polenta, formaggi locali!</p>
+      </div>
+
+      <div class="box box-verde">
+        <div class="box-ic">💡</div>
+        <div class="box-body">
+          <strong>Consiglio</strong>
+          <p>Chiedete al personale dell'albergo Cinzia informazioni aggiornate sui percorsi Martalar e sugli eventi locali della settimana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIORNO 2 -->
+  <div class="day-card g2">
+    <div class="day-header">
+      <div class="day-number">2</div>
+      <div class="day-info">
+        <div class="data">Giovedì 11 Giugno</div>
+        <h2>Lago di Calceranica al Lago</h2>
+      </div>
+      <div class="day-emoji">🏖️</div>
+    </div>
+    <div class="day-body">
+      <span class="difficulty diff-facile">🟢 Facile</span>
+      <p>Una mattinata rilassante al bellissimo Lago di Calceranica, parte del comprensorio del Lago di Levico. Acque limpide e verde lussureggiante vi aspettano!</p>
+
+      <div class="attivita">
+        <h4>🅿️ Come arrivare</h4>
+        <ul>
+          <li>Scendere con l'auto verso <strong>Calceranica al Lago</strong></li>
+          <li>Parcheggiare gratuitamente vicino alla <strong>Chiesa della Beata Vergine del Rosario</strong></li>
+          <li>A piedi, seguire il percorso verso il lago</li>
+          <li>Si attraversa un <strong>comodo sottopasso</strong> per superare la strada</li>
+          <li>Il lago è a soli <strong>5 minuti a piedi</strong> – percorso pianeggiante e senza difficoltà</li>
+        </ul>
+        <a class="mappa-link" href="https://maps.app.goo.gl/2CJgt2rRe52x9Rvx7" target="_blank">🗺️ Apri mappa parcheggio</a>
+      </div>
+
+      <div class="parcheggio">🅿️ <strong>Parcheggio gratuito</strong> presso la Chiesa della Beata Vergine del Rosario</div>
+
+      <div class="attivita">
+        <h4>🌊 Al lago</h4>
+        <ul>
+          <li>Spiaggia con aree attrezzate per riposarsi</li>
+          <li>Acque pulite e clima piacevole a giugno</li>
+          <li>Bar e strutture nei pressi della riva</li>
+          <li>Possibilità di fare una breve passeggiata lungo le rive</li>
+        </ul>
+      </div>
+
+      <div class="attivita">
+        <h4>🍹 Tunga Beach Bar</h4>
+        <p>Direttamente sul lago, il <strong>Tunga Beach Bar</strong> è il posto ideale per un aperitivo, un pranzo fresco o una bibita in riva all'acqua con vista mozzafiato!</p>
+        <ul>
+          <li>🏖️ <strong>Bella spiaggia con poca gente</strong> – tranquilla e rilassante</li>
+          <li>🅿️ <strong>Parcheggio libero</strong> nelle vicinanze</li>
+        </ul>
+        <a class="mappa-link" href="https://maps.app.goo.gl/wKVprx4pX2UoLoua6" target="_blank">🗺️ Apri su Google Maps</a>
+      </div>
+
+      <div class="box box-caldo">
+        <div class="box-ic">⏰</div>
+        <div class="box-body">
+          <strong>Orario consigliato</strong>
+          <p>Partite la mattina (9–10) per evitare il caldo del primo pomeriggio. Fermatevi al Tunga Beach Bar per il pranzo o un aperitivo in riva al lago!</p>
+        </div>
+      </div>
+
+      <div class="attivita">
+        <h4>🚣 Pomeriggio alternativo: Giro del Lago di Caldonazzo</h4>
+        <p>Se vi sentite in forma, a soli <strong>5 minuti</strong> si trova il <strong>Lago di Caldonazzo</strong> — il più grande lago interamente trentino (5 km di lunghezza, acque calde d'estate). Passeggiata pianeggiante sulla riva, lido attrezzato e bar con vista.</p>
+        <ul>
+          <li>🚶 Percorso comodo lungo la riva, tutto in piano</li>
+          <li>🏖️ Spiaggia attrezzata con bar e servizi</li>
+          <li>🅿️ Parcheggio gratuito vicino al lago</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIORNO 3 -->
+  <div class="day-card g3">
+    <div class="day-header">
+      <div class="day-number">3</div>
+      <div class="day-info">
+        <div class="data">Venerdì 12 Giugno</div>
+        <h2>Levico Terme e Borgo Valsugana</h2>
+      </div>
+      <div class="day-emoji">🌳</div>
+    </div>
+    <div class="day-body">
+      <span class="difficulty diff-facile">🟢 Facile</span>
+      <p>Una giornata ricca nella <strong>Valsugana</strong>: prima una salita panoramica a Vetriolo Terme, poi Levico Terme e il suo parco, nel pomeriggio il medievale Borgo Valsugana e Arte Sella. Scegliete il ritmo — ogni tappa vale la visita!</p>
+
+      <div class="attivita">
+        <h4>🏔️ Vetriolo Terme – Il Balcone sul Trentino</h4>
+        <p>Prima di scendere a Levico, salite fino a <strong>Vetriolo Terme</strong> con una strada panoramica di soli 12 km da Levico — si arriva a <strong>1.600 m di quota</strong> in circa 15–20 minuti di tornanti panoramici!</p>
+        <ul>
+          <li>🌅 Vista spettacolare sulla Valsugana, le Dolomiti e l'Altopiano</li>
+          <li>💧 Sorgenti di acque minerali fredde, note fin dall'antichità</li>
+          <li>🌿 Aria freschissima e paesaggio alpino incantevole</li>
+          <li>🚗 Si raggiunge <strong>solo in auto</strong> — nessuna camminata impegnativa</li>
+          <li>☕ Piccolo bar/rifugio in quota per una sosta</li>
+        </ul>
+        <div style="background:#fde8e8;border-left:4px solid #c0392b;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px;color:#7b2d2d;">
+          ⚠️ <strong>Non a piedi da Levico!</strong> Il sentiero pedonale Levico–Vetriolo sale oltre 900 m di dislivello — è una gita impegnativa per escursionisti allenati. Andate <strong>solo in auto</strong> con la strada panoramica.
+        </div>
+        <div class="parcheggio">💡 <strong>Consiglio:</strong> andate la mattina presto — luce perfetta per le foto e poca gente!</div>
+      </div>
+
+      <div class="attivita">
+        <h4>🅿️ Come arrivare e parcheggiare a Levico</h4>
+        <ul>
+          <li>Raggiungere <strong>Levico Terme</strong> in auto (pochi minuti da Vattaro)</li>
+          <li>Parcheggiare <strong>gratuitamente</strong> nei pressi della <strong>stazione ferroviaria</strong></li>
+          <li>Da questo parcheggio si raggiungono <strong>comodamente entrambe le mete</strong>:</li>
+          <li>🌳 Il <strong>Parco Asburgico</strong> è a soli <strong>2 minuti a piedi</strong></li>
+          <li>🛍️ Il <strong>centro del paese</strong> è sulla <strong>sinistra</strong> uscendo dalla stazione – anch'esso vicinissimo</li>
+        </ul>
+        <div class="parcheggio">🅿️ <strong>Parcheggio gratuito</strong> vicino alla Stazione di Levico Terme – valido per Parco Asburgico e centro paese</div>
+        <a class="mappa-link" href="https://maps.app.goo.gl/4ZWVNyFYdpWz8vkJ6" target="_blank">🅿️ Apri mappa parcheggio</a>
+      </div>
+
+      <div class="attivita">
+        <h4>🏰 Parco Asburgico</h4>
+        <ul>
+          <li>Parco storico di epoca austro-ungarica, meraviglioso e molto curato</li>
+          <li>Viali ombreggiati e panchine per riposarsi</li>
+          <li>Lago e fontane storiche</li>
+          <li>Ingresso <strong>gratuito</strong></li>
+          <li>Ideale per una passeggiata lenta di 45–60 minuti</li>
+        </ul>
+        <div class="parcheggio">🕙 <strong>Orari:</strong> Aperto tutti i giorni, tutto il giorno &nbsp;|&nbsp; Ingresso gratuito</div>
+      </div>
+
+      <div class="attivita">
+        <h4>🛍️ Centro di Levico Terme</h4>
+        <ul>
+          <li>Corso pedonale con negozi, gelaterie e caffè</li>
+          <li>Ottima sosta per un pranzo tipico</li>
+          <li>Architettura liberty di fine Ottocento molto suggestiva</li>
+        </ul>
+      </div>
+
+      <div class="attivita">
+        <h4>🏰 Borgo Valsugana – Centro Storico</h4>
+        <p>Nel primo pomeriggio, proseguite per una ventina di minuti lungo la Valsugana fino a <strong>Borgo Valsugana</strong>: un borgo medievale affascinante sul fiume Brenta, da non perdere!</p>
+        <ul>
+          <li>🌉 <strong>Ponte Veneziano</strong> e rive del fiume Brenta – scenografici e rilassanti</li>
+          <li>🏰 <strong>Castel Telvana</strong> – castello medievale che domina il paese</li>
+          <li>⛪ Chiese e vicoli del centro storico da esplorare a piedi tranquillamente</li>
+          <li>🪖 Mostra Permanente della Grande Guerra – per chi ama la storia</li>
+          <li>🥾 Passeggiata nel centro storico: facile, pianeggiante, molto suggestiva</li>
+        </ul>
+        <a class="mappa-link" href="https://maps.app.goo.gl/2C65psAoQC8gWgKr6" target="_blank">🗺️ Apri su Google Maps</a>
+      </div>
+
+      <div class="attivita">
+        <h4>🌿 Arte Sella – Arte nella Natura</h4>
+        <p>A pochi minuti da Borgo Valsugana, in Val di Sella, uno dei parchi d'arte contemporanea all'aperto più famosi d'Italia. Sculture monumentali create con elementi naturali, immerse nel bosco in modo straordinario.</p>
+        <ul>
+          <li>🌲 <strong>Cattedrale Vegetale</strong> – l'opera simbolo: una cattedrale costruita con alberi vivi, da non perdere!</li>
+          <li>🎨 Sculture di artisti internazionali integrate nella natura del bosco</li>
+          <li>🥾 Percorso su sterrato regolare, adatto a tutti – passeggiate lente e contemplative</li>
+          <li>🅿️ Parcheggio a 15 minuti a piedi dall'area principale (50 posti)</li>
+          <li>💶 Ingresso: <strong>11 € a persona</strong></li>
+        </ul>
+        <div class="parcheggio">🕙 <strong>Orari giugno:</strong> tutti i giorni 10:00 – 19:00</div>
+        <a class="mappa-link" href="https://artesella.it/visita/tariffe-e-orari/" target="_blank">🔗 Sito ufficiale Arte Sella</a>
+      </div>
+
+      <div class="attivita">
+        <h4>🦅 Alternativa pomeridiana: Castel Tesino e i Grifoni</h4>
+        <p>Continuando oltre Borgo Valsugana nella <strong>Valle del Tesino</strong>, si raggiunge in 20 minuti il grazioso borgo medievale di <strong>Castel Tesino</strong>. Il motivo in più per andarci? I <strong>Grifoni</strong>! Questi maestosi rapaci – con un'apertura alare di quasi 2 metri – sono stati reintrodotti nella valle e si possono vedere planare sulle creste delle montagne. Uno spettacolo naturalistico unico.</p>
+        <ul>
+          <li>🏘️ Centro storico con vicoli e chiese medievali</li>
+          <li>🔭 Portate il binocolo per l'avvistamento dei grifoni!</li>
+          <li>🅿️ Parcheggio gratuito in paese</li>
+          <li>🚗 ~50 min da Vattaro (via Borgo Valsugana)</li>
+        </ul>
+        <div class="parcheggio">💡 <strong>Consiglio:</strong> Castel Tesino + Borgo Valsugana = giornata completa nella Valsugana, senza Arte Sella (da fare in altro giorno)</div>
+      </div>
+
+      <div class="box box-caldo">
+        <div class="box-ic">💡</div>
+        <div class="box-body">
+          <strong>Giornata ricca – scegliete il ritmo!</strong>
+          <p>Troppo per un solo giorno? Scegliete: <b>Opzione A</b> → Vetriolo + Levico + Arte Sella. <b>Opzione B</b> → Vetriolo + Borgo Valsugana + Castel Tesino (con i grifoni!). Ognuna è splendida.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIORNO 4 -->
+  <div class="day-card g4">
+    <div class="day-header">
+      <div class="day-number">4</div>
+      <div class="day-info">
+        <div class="data">Sabato 13 Giugno</div>
+        <h2>Trento: Arte, Storia e Scienza</h2>
+      </div>
+      <div class="day-emoji">🏛️</div>
+    </div>
+    <div class="day-body">
+      <span class="difficulty diff-moderato">🟡 Moderato – con pause</span>
+      <p>Una giornata ricca nella splendida Trento. La città è comoda, con marciapiedi larghi e molte aree di sosta. Scegliete 2 dei 3 luoghi suggeriti per non affaticarvi.</p>
+
+      <div class="attivita">
+        <h4>🅿️ Dove parcheggiare a Trento</h4>
+        <ul>
+          <li>Usate il <strong>Parcheggio Sanseverino – P7</strong>, comodo e ben collegato al centro</li>
+          <li>Da lì si raggiunge il centro storico, il Duomo e il Castello in pochi minuti a piedi</li>
+          <li>Parcheggio ampio e facile da trovare</li>
+        </ul>
+        <div class="parcheggio">🅿️ <strong>Parcheggio gratuito</strong> – Sanseverino P7</div>
+        <a class="mappa-link" href="https://maps.app.goo.gl/RZuabQiWsgyKo7oz6" target="_blank">🗺️ Apri mappa Parcheggio gratuito</a>
+      </div>
+
+      <div class="box box-caldo">
+        <div class="box-ic">💡</div>
+        <div class="box-body">
+          <strong>In alternativa</strong>
+          <p>Potete anche arrivare in treno da Levico Terme – comodo, rilassante e senza pensieri di parcheggio!</p>
+        </div>
+      </div>
+
+      <div class="attivita">
+        <h4>🏰 Castello del Buonconsiglio</h4>
+        <ul>
+          <li>Magnifico castello medievale e rinascimentale, simbolo di Trento</li>
+          <li>Museo con opere d'arte e storia del Trentino</li>
+          <li>Percorso interno accessibile con aree di sosta</li>
+          <li>Vista panoramica sulla città dalla torre</li>
+          <li>⏱️ Tempo consigliato: 1,5 – 2 ore</li>
+        </ul>
+        <div class="parcheggio">🕙 <strong>Orari:</strong> Mar–Dom 10:00–18:00 &nbsp;|&nbsp; <strong>Lunedì CHIUSO</strong></div>
+      </div>
+
+      <div class="attivita">
+        <h4>⛪ Duomo di Trento e Piazza del Duomo</h4>
+        <ul>
+          <li>Splendida cattedrale romanica del XIII secolo</li>
+          <li>La piazza è il cuore della città: fontana del Nettuno, portici storici</li>
+          <li>Zona pedonale perfetta per una passeggiata tranquilla</li>
+          <li>Molti bar e ristoranti con tavoli all'aperto</li>
+          <li>⏱️ Tempo consigliato: 1 ora (chiesa + piazza + caffè)</li>
+        </ul>
+        <div class="parcheggio">🕙 <strong>Piazza del Duomo:</strong> Accessibile liberamente tutto il giorno</div>
+      </div>
+
+      <div class="attivita">
+        <h4>🔬 MUSE – Museo delle Scienze</h4>
+        <ul>
+          <li>Museo moderno e affascinante, progettato da Renzo Piano</li>
+          <li>Perfettamente accessibile: ascensori, sedute ovunque, pavimenti lisci</li>
+          <li>Esposizioni sulla natura alpina, paleontologia, scienza</li>
+          <li>Cafeteria interna per la pausa</li>
+          <li>⏱️ Tempo consigliato: 1,5 – 2 ore</li>
+        </ul>
+        <div class="parcheggio">🕙 <strong>Orari:</strong> Mar–Ven 10:00–18:00 &nbsp;|&nbsp; Sab–Dom 10:00–19:00 &nbsp;|&nbsp; <strong>Lunedì CHIUSO</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIORNO 5 -->
+  <div class="day-card g5">
+    <div class="day-header">
+      <div class="day-number">5</div>
+      <div class="day-info">
+        <div class="data">Domenica 14 Giugno</div>
+        <h2>Altopiano di Piné – I Laghi</h2>
+      </div>
+      <div class="day-emoji">🌊</div>
+    </div>
+    <div class="day-body">
+      <span class="difficulty diff-facile">🟢 Facile – passeggiata pianeggiante</span>
+      <p>L'Altopiano di Piné è un paradiso di quiete con laghi alpini cristallini. La passeggiata intorno ai laghi è <strong>semplice e pianeggiante</strong>, perfetta per una domenica rilassante.</p>
+
+      <div class="attivita">
+        <h4>🌿 Laghi dell'Altopiano di Piné</h4>
+        <ul>
+          <li><strong>Lago di Serraia</strong> – il più grande, con pista ciclabile/pedonale intorno (circa 4 km, comodissima)</li>
+          <li><strong>Lago Santo (Lago di Piné)</strong> – più tranquillo e immerso nella natura</li>
+          <li>Percorsi su sterrato compatto, adatti a tutti</li>
+          <li>Panchine ogni 200–300 metri per riposarsi</li>
+          <li>Bar e ristoranti affacciati sui laghi</li>
+        </ul>
+        <div class="parcheggio">🅿️ <strong>Parcheggio gratuito</strong> ai laghi</div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+          <a class="mappa-link" href="https://maps.app.goo.gl/LxzVka3zE3tX3g7X7" target="_blank">🅿️ Parcheggio 1</a>
+          <a class="mappa-link" href="https://maps.app.goo.gl/UPwCpLqjoaUwj5S3A" target="_blank">🅿️ Parcheggio 2</a>
+        </div>
+      </div>
+
+      <div class="box box-verde">
+        <div class="box-ic">🦆</div>
+        <div class="box-body">
+          <strong>Cosa aspettarsi</strong>
+          <p>A giugno i laghi sono circondati da prati fioriti e boschi di abeti. Portate il binocolo per osservare gli uccelli! Il paesaggio è di grande tranquillità.</p>
+        </div>
+      </div>
+
+      <div class="attivita">
+        <h4>🍦 Pranzo e gelato</h4>
+        <p>Diversi locali affacciati sul lago offrono menù tipici trentini a prezzi ragionevoli. Ottima anche la pasticceria locale.</p>
+      </div>
+
+      <div class="attivita">
+        <h4>🍨 Diciotto Dodici – Gelateria Artigianale</h4>
+        <p>Sulla strada di rientro, fermatevi a <strong>Pergine Valsugana</strong> per un gelato artigianale da non perdere! La <strong>Diciotto Dodici</strong> è una delle migliori gelaterie della zona: cremoso, gustoso e con porzioni generose. Valutazione 4,8/5 su TripAdvisor!</p>
+        <ul>
+          <li>📍 Via Volpare 20, Pergine Valsugana</li>
+          <li>🍧 Gelati · Frappè · Torte · Semifreddi</li>
+        </ul>
+        <a class="mappa-link" href="https://maps.app.goo.gl/9Mn6SRTDTZDVfy6q7" target="_blank">🗺️ Apri su Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIORNO 6 -->
+  <div class="day-card g6">
+    <div class="day-header">
+      <div class="day-number">6</div>
+      <div class="day-info">
+        <div class="data">Lunedì 15 Giugno</div>
+        <h2>Lavarone – Il Drago e il Lago</h2>
+      </div>
+      <div class="day-emoji">🐉</div>
+    </div>
+    <div class="day-body">
+      <span class="difficulty diff-facile">🟢 Facile</span>
+      <p>Lavarone è un altopiano incantato a circa 1.100 m s.l.m., più fresco e riposante. La star è il <strong>Drago di Vaia</strong> di Martalar – la scultura in legno più grande d'Europa!</p>
+
+      <div class="attivita">
+        <h4>🐲 Il Drago di Vaia (Marco Martalar)</h4>
+        <ul>
+          <li>Scultura monumentale realizzata con il legno della tempesta Vaia del 2018</li>
+          <li>Alta e imponente, è diventata simbolo della rinascita del bosco trentino</li>
+          <li>Raggiungibile con una breve camminata su sentiero facile</li>
+          <li>Ideale per foto indimenticabili!</li>
+        </ul>
+      </div>
+
+      <div class="attivita">
+        <h4>🏖️ Lago di Lavarone</h4>
+        <ul>
+          <li>Lago balneabile di montagna, acque fresche e limpide</li>
+          <li>Due spiagge attrezzate, perfette per una sosta</li>
+          <li>Pedalò e piccole imbarcazioni in noleggio</li>
+          <li>Bar e ristoranti lungo la riva</li>
+          <li>Atmosfera romantica e silenziosa – niente traffico!</li>
+        </ul>
+      </div>
+
+      <div class="attivita">
+        <h4>🍯 Casa e Museo del Miele</h4>
+        <ul>
+          <li>Visita facoltativa per chi ama le tradizioni artigianali</li>
+          <li>Degustazione di mieli locali dell'Altopiano di Lavarone</li>
+          <li>Piccola ma interessante, ottima per un'oretta pomeridiana</li>
+        </ul>
+      </div>
+
+      <div class="box box-blu">
+        <div class="box-ic">🌬️</div>
+        <div class="box-body">
+          <strong>Clima a Lavarone</strong>
+          <p>A 1.100 m è più fresco di Vattaro, anche di 3–5 gradi. Portate una giacchina leggera anche se a Vattaro fa caldo!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIORNO 7 -->
+  <div class="day-card g7">
+    <div class="day-header">
+      <div class="day-number">7</div>
+      <div class="day-info">
+        <div class="data">Martedì 16 Giugno</div>
+        <h2>Giorno Libero – Riposo e Sapori</h2>
+      </div>
+      <div class="day-emoji">☕</div>
+    </div>
+    <div class="day-body">
+      <span class="difficulty diff-facile">🟢 Relax totale</span>
+      <p>L'ultimo giorno pieno è tutto vostro! Potete riposarvi in albergo, tornare in un posto che vi è piaciuto particolarmente o fare acquisti di prodotti tipici.</p>
+
+      <div class="attivita">
+        <h4>🏔️ Gita al Monte Bondone (passando da Trento)</h4>
+        <p>Una delle escursioni più belle e comode della zona! Si sale da <strong>Trento</strong> con una strada panoramica fino all'altopiano delle <strong>Viote</strong>, a 1.538 m s.l.m. Paesaggi alpini mozzafiato e aria purissima.</p>
+        <ul>
+          <li>🌸 <strong>Giardino Botanico Alpino delle Viote</strong> – uno dei più grandi delle Alpi, con oltre 1.000 specie di piante rare, laghetti, torbiere e praterie fiorite su 10 ettari</li>
+          <li>🥾 Passeggiate facili nella piana delle Viote, percorsi pianeggianti adatti a tutti</li>
+          <li>📸 Vista panoramica sulle Dolomiti e sulla città di Trento</li>
+          <li>🌡️ Fresco anche in estate: portate sempre una giacca!</li>
+          <li>🚗 Si raggiunge in auto da Trento in circa 30 minuti di strada panoramica</li>
+        </ul>
+        <div class="parcheggio">🕙 <strong>Giardino Botanico:</strong> aperto dal 31 maggio – verificare orari aggiornati sul sito MUSE</div>
+      </div>
+
+      <div class="attivita">
+        <h4>🔄 Altre idee per la giornata</h4>
+        <ul>
+          <li>Tornare al lago preferito per una seconda visita</li>
+          <li>Giardino dell'albergo con un buon libro</li>
+          <li>Mercatino locale o negozi di artigianato a Vattaro o Levico</li>
+          <li>Aperitivo in un bar del paese</li>
+        </ul>
+      </div>
+
+      <div class="attivita">
+        <h4>🛍️ Prodotti da portare a casa</h4>
+        <ul>
+          <li>🍷 Vino Trentino DOC (Marzemino, Teroldego, Pinot Grigio)</li>
+          <li>🧀 Formaggio Vezzena o Spressa delle Giudicarie</li>
+          <li>🍯 Miele di montagna dell'Altopiano</li>
+          <li>🍫 Cioccolato e dolci trentini</li>
+          <li>🍎 Grappa o aceto di mele</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIORNO 8 -->
+  <div class="day-card g8">
+    <div class="day-header">
+      <div class="day-number">8</div>
+      <div class="day-info">
+        <div class="data">Mercoledì 17 Giugno</div>
+        <h2>Partenza – Arrivederci Trentino!</h2>
+      </div>
+      <div class="day-emoji">👋</div>
+    </div>
+    <div class="day-body">
+      <p>È il giorno del rientro. Prima di partire, fate colazione con calma e godetevi un'ultima occhiata al bellissimo paesaggio dell'Altopiano della Vigolana.</p>
+
+      <div class="attivita">
+        <h4>☑️ Checklist partenza</h4>
+        <ul>
+          <li>Verificare l'orario del check-out con l'albergo</li>
+          <li>Ricaricare le batterie dei telefoni</li>
+          <li>Caricare i prodotti tipici acquistati</li>
+          <li>Chiedere ricevuta e fattura se necessario</li>
+          <li>Salutare lo staff con un bel grazie! 😊</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-to-top"><a href="#top">⬆️ Torna in cima</a></div>
+
+  <!-- CONSIGLI PRATICI -->
+  <h2 class="section-title" id="consigli">💡 Consigli Pratici</h2>
+
+  <div class="consigli-grid">
+    <div class="consiglio-card">
+      <div class="ic-big">👟</div>
+      <h4>Calzature</h4>
+      <ul>
+        <li>Scarpe da ginnastica comode con suola morbida</li>
+        <li>Sandali comodi per il lago</li>
+        <li>Evitate tacchi o scarpe con suola dura</li>
+      </ul>
+    </div>
+    <div class="consiglio-card">
+      <div class="ic-big">🎒</div>
+      <h4>Cosa portare ogni giorno</h4>
+      <ul>
+        <li>Bottiglietta d'acqua riutilizzabile – <strong>l'acqua del rubinetto è potabile ovunque</strong>, anche in hotel e alle fontane pubbliche!</li>
+        <li>Giacca leggera o felpa</li>
+        <li>Crema solare (SPF 30+)</li>
+        <li>Cappello o visiera</li>
+        <li>Qualche spuntino</li>
+      </ul>
+    </div>
+    <div class="consiglio-card">
+      <div class="ic-big">🚗</div>
+      <h4>Spostamenti</h4>
+      <ul>
+        <li>L'auto è essenziale per quasi tutti i luoghi</li>
+        <li>Distanze brevi: 15–30 min max per ogni meta</li>
+        <li>Parcheggi gratuiti segnalati in guida</li>
+        <li>Trento: valutare il treno da Levico (comodo!)</li>
+      </ul>
+    </div>
+    <div class="consiglio-card">
+      <div class="ic-big">💊</div>
+      <h4>Salute & Benessere</h4>
+      <ul>
+        <li>Camminate lentamente, senza fretta</li>
+        <li>Pause frequenti con seduta</li>
+        <li>Evitate le ore più calde (13–15)</li>
+        <li>Farmacia più vicina: Levico Terme</li>
+      </ul>
+    </div>
+    <div class="consiglio-card">
+      <div class="ic-big">📱</div>
+      <h4>App Utili</h4>
+      <ul>
+        <li><strong>Google Maps</strong> – navigazione</li>
+        <li><strong>Meteo.it</strong> – previsioni locali</li>
+        <li><strong>Visit Trentino</strong> – eventi e info</li>
+        <li><strong>Shazam</strong> – musica nei locali 😄</li>
+      </ul>
+    </div>
+    <div class="consiglio-card">
+      <div class="ic-big">🍽️</div>
+      <h4>Cucina Trentina da Provare</h4>
+      <ul>
+        <li>Canederli in brodo o al burro</li>
+        <li>Polenta con funghi o cervo</li>
+        <li>Strangolapreti agli spinaci</li>
+        <li>Strudel di mele</li>
+        <li>Zelten (dolce natalizio, ma buono sempre!)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- NUMERI UTILI -->
+  <h2 class="section-title" id="emergenze">📞 Numeri Utili</h2>
+
+  <div class="box box-blu">
+    <div class="box-ic">🆘</div>
+    <div class="box-body">
+      <strong>Emergenze e Numeri da Sapere</strong>
+      <ul>
+        <li>🚑 <strong>Emergenza generale:</strong> 112</li>
+        <li>🏥 <strong>Ospedale di Trento:</strong> 0461 903111</li>
+        <li>🏥 <strong>Presidio di Levico Terme:</strong> 0461 706111</li>
+        <li>🏨 <strong>Albergo Cinzia:</strong> chiedete il numero all'arrivo</li>
+        <li>☀️ <strong>Meteo Trentino:</strong> meteotrentino.it</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <strong>Buona Vacanza! 🌿</strong><br/>
+  Guida preparata con cura per il vostro soggiorno a Vattaro · Giugno 2026<br/>
+  <small>Altopiano della Vigolana · Trentino Alto Adige</small>
+</footer>
+
+</body>
+</html>
